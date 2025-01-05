@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "version": "0.1",
+  "name": "LeetBoard",
+  "description": "Track and compete with friends on LeetCode!",
+  "action": {
+    "default_popup": "./popup.html",
+    "default_icon": {
+      "16": "./src/icons/lb_16.png",
+      "32": "./src/icons/lb_32.png",
+      "48": "./src/icons/lb_48.png",
+      "128": "./src/icons/lb_128.png"
+    },
+    "default_title": "LeetBoard"
+  },
+  "permissions": [
+    "identity"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+ 
+
+  "icons": {
+    "16": "./src/icons/lb_16.png",
+    "32": "./src/icons/lb_32.png",
+    "48": "./src/icons/lb_48.png",
+    "128": "./src/icons/lb_128.png"
+  },
+  
+  "oauth2": {
+    "client_id": "307301057615-5krrnm7do2c6sgujgp781lberl7ecrnr.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+
+}

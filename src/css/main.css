@@ -1,0 +1,117 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+
+body {
+  width: 300px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #282828;
+  color: #ffffff;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 100;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+}
+
+#logoutBtn {
+  display: block;
+  margin: 10px auto;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.table-container {
+  position: relative;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  border: 1px solid #eda129;
+  padding: 8px;
+  text-align: left;
+  color: #ffffff;
+}
+
+th {
+  background-color: #eda129;
+  color: #1a1a1a;
+}
+
+#addUserForm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#leetcodeId {
+  flex-grow: 1;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+#addUserBtn {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  gap: 3em;
+
+  align-items: center;
+}
+
+#sign_out {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.spinner {
+  border: 4px solid #282828;
+  /* Light grey */
+  border-top: 4px solid #eda129;
+  /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+
+
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-parent {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
