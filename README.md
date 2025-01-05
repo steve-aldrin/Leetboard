@@ -104,7 +104,7 @@ This helps us ensure that your contributions are aligned with the project and ma
 
 For any inquiries, please contact stevealdrin7@gmail.com
 
-#License
+## License
 LeetBoard is dual-licensed under the **AGPL-3.0 License** and a **Commercial License**.
 
 For more information refer the License file
