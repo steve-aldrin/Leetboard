@@ -85,10 +85,20 @@ Firebase is used for backend services such as authentication and data storage. E
 
 
 
+## **Contributing**
 
-## Contributing
+We welcome contributions to **LeetBoard**! Before contributing, please follow these steps:
 
-We welcome contributions to LeetBoard! Please fork the repository, create a branch, and submit a pull request with your changes.
+1. **Join our [Discord Server](https://discord.gg/KmhtPxg5Tb)**  
+   - Once you're in the server, introduce yourself and have a quick chat with me (the project owner).
+
+2. **Discuss Your Changes**  
+   - We’ll go over the Contributor Guidelines and make sure we’re on the same page regarding your proposed changes.
+
+3. **Make Your Pull Request**  
+   - After discussing your changes and getting the green light, feel free to submit your pull request.
+
+This helps us ensure that your contributions are aligned with the project and maintain its quality.
 
 ## Contact
 
