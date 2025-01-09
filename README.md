@@ -1,5 +1,6 @@
 # LeetBoard Chrome Extension
 
+![](leetboard.png)
 LeetBoard is a Chrome extension that allows users to track their LeetCode progress and collaborate with friends. This repository contains the source code for the extension and its configuration.
 
 ## Table of Contents
