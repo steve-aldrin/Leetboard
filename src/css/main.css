@@ -6,6 +6,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #282828;
   color: #ffffff;
+  margin: auto;
 }
 
 h1 {
@@ -114,4 +115,67 @@ th {
   width: 100%;
   justify-content: center;
   align-items: center;
+}
+.open-to-contribute {
+  background-color: #EF4444;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+}
+.open-to-contribute a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.open-to-contribute a :is(img, span) {
+  display: block;
+}
+.contribute-icon {
+  max-width: 100%;
+  width: 20px;
+  height: auto;
+}
+.open-to-contribute:hover .contribute-icon {
+  -webkit-animation: pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+  animation: pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+
+}
+.contribute-text {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family:sans-serif;
+  font-weight: 600;
+}
+ @-webkit-keyframes pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+}
+@keyframes pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
 }
