@@ -104,7 +104,7 @@ For local testing and development:
 - Build the extension using npm run build.
 - Open Chrome and navigate to chrome://extensions/.
 - Enable Developer mode and click Load unpacked.
-- Select the src folder in your project directory.
+- Select the dist folder in your project directory.
 
 7. Firebase Integration
 
