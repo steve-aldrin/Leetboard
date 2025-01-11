@@ -118,9 +118,10 @@ th {
 }
 .open-to-contribute {
   background-color: #EF4444;
-  width: 100%;
+  width: calc(100%- 100px);
   height: 40px;
-  margin-top: 20px;
+  display: block;
+  margin: 20px auto;
   outline: none;
   border: none;
   border-radius: 30px;
@@ -147,7 +148,7 @@ th {
 }
 .contribute-text {
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-family:sans-serif;
   font-weight: 600;
 }
