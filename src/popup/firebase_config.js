@@ -3,27 +3,18 @@ import { getFirestore } from 'firebase/firestore';
 
 
 // config after registering firebase App 
-const config = {
+const firebaseConfig = {
     apiKey: "",
-
     authDomain: "",
-  
     projectId: "",
-  
     storageBucket: "",
-  
     messagingSenderId: "",
-  
-    appId: "",
-  
-    measurementId: ""
-  
-};
-
+    appId: ""
+  };
 
 // This creates firebaseApp instance
 // version: SDK 9
-const firebaseApp = initializeApp(config)
+const firebaseApp = initializeApp(firebaseConfig)
 const db = getFirestore(firebaseApp);
 
 export{
