@@ -1,2 +1,4 @@
 node_modules
 dist/
+src/popup/firebase_config.js
+src/manifest.json
