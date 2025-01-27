@@ -7,9 +7,12 @@ LeetBoard is a Chrome extension that allows users to track their LeetCode progre
 
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
-3. [Contributing](#contributing)
-4. [Contact](#contact)
-5. [License](#license)
+3. [Webpack Configuration](#webpack-configuration)
+4. [Extension Code](#extension-code)
+5. [Firebase Integration](#firebase-integration)
+6. [Contributing](#contributing)
+7. [Contact](#contact)
+8. [License](#license)
 
 ## Prerequisites
 
@@ -18,9 +21,6 @@ Before you begin, make sure you have the following tools installed on your machi
 - Node.js
 - npm
 - Firebase account for Firebase configuration
-  Node.js
-  npm
-  Firebase account for Firebase configuration
 
 ## Installation
 
@@ -48,31 +48,65 @@ npm install
 In order to set up Firebase for the extension, follow these steps:
 
 - Go to [Firebase Console](https://console.firebase.google.com/).
-- Create a new Firebase project or use an existing one.
-- Register your app with Firebase and obtain the configuration details.
+- Create a new Firebase project.
+- After you have created your project, add a new Web App to your Firebase project, by clicking on code icon, found on Project Overview tab of Firebase console.
+  ![Web app first step](./setup-imgs/web-app1.1.jpeg)
 
-Fill in the details of your Firebase config in src/firebase_config.js:
+  Then on first field add app's nickname and click on register app:
 
-```bash
-// firebase_config.js
-export const firebaseApp = initializeApp({
-apiKey: "<YOUR-API-KEY>",
-authDomain: "<YOUR-AUTH-DOMAIN>",
-projectId: "<YOUR-PROJECT-ID>",
-storageBucket: "<YOUR-STORAGE-BUCKET>",
-messagingSenderId: "<YOUR-MESSAGING-SENDER-ID>",
-appId: "<YOUR-APP-ID>",
-measurementId: "<YOUR-MEASUREMENT-ID>"
-});
-```
+  ![Web app second step](./setup-imgs/web-app1.2.jpeg)
 
-You can reference this configuration in any JavaScript file by importing the firebaseApp:
+- Open your code editor and create a `.env` file and add the following env variables, provided by Firebase.
 
 ```bash
-import { firebaseApp } from './firebase_config';
+  API_KEY_LOCAL="<YOUR-API-KEY>"
+  AUTH_DOMAIN="<YOUR-AUTH-DOMAIN>"
+  PROJECT_ID="<YOUR-PROJECT-ID>"
+  STORAGE_BUCKET="<YOUR-STORAGE-BUCKET>"
+  MESSAGING_SENDER_ID="<YOUR-MESSAGING-SENDER-ID>"
+  APP_ID="<YOUR-APP-ID>"
 ```
 
-4. Webpack Configuration
+- Enable Authentication and select Google as a sign-in method. On Project Overview tab, scroll down to find _Authentication_ section.
+  ![Authentication Section Firebase](./setup-imgs/auth1.1.jpeg)
+
+  Then, click on _Get Started_ button:
+  ![Get started Auth](./setup-imgs/auth1.2.jpeg)
+
+  On _Sign-in method_ tab of Authentication section, choose Google:
+  ![Google sign-in Firebase](./setup-imgs/auth1.3.jpeg)
+
+  Click _Enable_:
+  ![Enable Google Sign-in](./setup-imgs/auth1.4.jpeg)
+
+  Fill in project name, click on dropdown to select your gmail account and hit _Save_:
+  ![ls](./setup-imgs/auth1.5.jpeg)
+
+4. Set Up Google Cloud Console
+
+- Go to [Google Cloud Console](https://console.cloud.google.com/).
+- On header of Google Cloud Console, click on _Select Project_. and select your lately created Firebase project. Make sure it has the same _PROJECT_ID_, as the one on `.env` file.
+  ![Select project on Google console](./setup-imgs/google-console1.1.jpeg)
+- Then, open the navigation menu (on top left corner), locate _API & Services_ and click on _Credentials_.
+  ![Credentials selection](./setup-imgs/google-console1.2.jpeg)
+- Locate OAuth 2.0 Client IDs and copy Client ID.
+- Open `manifest.json` file and paste the Client ID on oauth2.client_id.
+  ![ClientID manifest](./setup-imgs/client-id-manifest.png)
+- Open your code editor and on project's root folder run the following command to start webpack on development server:
+
+```bash
+npm run build
+```
+
+- On Chrome, navigate to `chrome://extensions`, enable _Developer Mode_, click _Load Unpacked_ on top left corner and select **dist** folder.
+- Once the extension is loaded copy _Extension ID_.
+- Navigate back to Google Cloud Console and click _Create Credentials_ and then OAuth client ID.
+  ![New credentials creation](./setup-imgs/google-console1.4.jpeg)
+- On _Application Type_ dropdown, select _Chrome Extension_. On _Name_ input field add the name of the extension 'LeetBoard'. At item ID field paste the _Extension ID_.
+  ![Crome extension credentials creation](./setup-imgs/google-console1.5.jpeg)
+- After successful creation, Google Cloud Console will prompt you an updated _Client ID_, copy and paste it on `manifest.json` at oauth2.client_id.
+
+## Webpack Configuration
 
 The project uses Webpack for bundling. There are three main Webpack configuration files:
 
@@ -90,23 +124,14 @@ npm run build
 
 - webpack.common.js: This file contains the common bundler configurations shared between both development and production scripts.
 
-5. Extension Code
+## Extension Code
 
 All the extension's development code should be placed in the **src/** folder. This includes:
 
 - The manifest.json file should also be in the src folder.
 - Any JavaScript, CSS, or assets for the extension should be placed in the appropriate directories within the src folder.
 
-6. Run the Extension Locally
-
-For local testing and development:
-
-- Build the extension using npm run build.
-- Open Chrome and navigate to chrome://extensions/.
-- Enable Developer mode and click Load unpacked.
-- Select the dist folder in your project directory.
-
-7. Firebase Integration
+## Firebase Integration
 
 Firebase is used for backend services such as authentication and data storage. Ensure that you have set up Firebase correctly and are importing and using the firebaseApp as shown above.
 
