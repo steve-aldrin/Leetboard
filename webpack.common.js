@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   // Note:
@@ -15,6 +16,7 @@ module.exports = {
     main: "./src/popup/main.js",
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "popup", "popup.html"),
