@@ -2,7 +2,7 @@
 
 body {
   width: 300px;
-  padding: 10px;
+  padding: 15px;
   font-family: Arial, sans-serif;
   background-color: #282828;
   color: #ffffff;
@@ -14,20 +14,15 @@ h1 {
   text-align: center;
   font-size: 40px;
   font-weight: 100;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   padding: 0;
   color: #fff;
 }
 
-#logoutBtn {
-  display: block;
-  margin: 10px auto;
-  padding: 5px 10px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+#welcome-msg {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 .table-container {
@@ -37,7 +32,7 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 10px;
+  margin: 10px 0 20px 0;
 }
 
 th,
@@ -56,22 +51,32 @@ th {
 #addUserForm {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #leetcodeId {
   flex-grow: 1;
   margin-right: 5px;
   padding: 5px;
+  background-color: #282828;
+  color: #fff;
+  border: 1px solid #ffffffa1;
+  border-radius: 3px;
 }
 
 #addUserBtn {
   padding: 5px 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  border: 2px solid #eda129;
+  color: #eda129;
+  background-color: transparent;
   border-radius: 3px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#addUserBtn:hover {
+  background-color: #eda129;
+  color: #1a1a1a;
 }
 
 .header {
@@ -81,21 +86,13 @@ th {
   align-items: center;
 }
 
-#sign_out {
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .spinner {
   border: 4px solid #282828;
-  /* Light grey */
   border-top: 4px solid #eda129;
-  /* Blue */
   border-radius: 50%;
   width: 40px;
   height: 40px;
   animation: spin 2s linear infinite;
-
 
   transform: translate(-50%, -50%);
 }
@@ -117,14 +114,45 @@ th {
   align-items: center;
 }
 
+#sign_out {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#logoutBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#logoutBtn .fa-sign-out {
+  margin-right: 5px;
+}
+
+#contribute-container {
+  margin-top: 40px;
+}
+
+#contribute-container p {
+  text-align: center;
+  opacity: 0.6;
+}
+
 .open-to-contribute {
-  background-color: #EF4444;
+  background-color: #ef4444;
   width: 200px;
   height: 40px;
+  margin: 0 auto;
   display: block;
-  margin: 30px auto 20px auto;
   outline: none;
   border: none;
+  cursor: pointer;
   border-radius: 30px;
   padding: 5px;
 }
@@ -148,9 +176,10 @@ th {
 }
 
 .open-to-contribute:hover {
-  -webkit-animation: pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-  animation: pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-
+  -webkit-animation: pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    infinite alternate both;
+  animation: pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    alternate both;
 }
 
 .contribute-text {

@@ -14,7 +14,7 @@ function updateLeaderboard() {
         const row = document.createElement('tr');
         const cell = document.createElement('td');
         cell.colSpan = 2;
-        cell.textContent = 'Add your friend\'s LeetCode ID below to keep track';
+        cell.textContent = 'Add your friend\'s LeetCode ID to keep track.';
         cell.style.textAlign = 'center';
         row.appendChild(cell);
         leaderboardBody.appendChild(row);
